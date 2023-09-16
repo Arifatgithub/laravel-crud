@@ -110,7 +110,7 @@ class IndexController extends Controller
         // return redirect()->route('students.index');
 
         if ($students) {
-            session()->flash('success_message', 'Student information deleted successfully');
+            session()->flash('error_message', 'Student information deleted successfully');
             return redirect()->route('students.index');
         } else {
             # code...
