@@ -1,1 +1,2 @@
 A test file created.
+Server version text file
