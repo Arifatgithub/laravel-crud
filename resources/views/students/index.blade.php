@@ -15,7 +15,7 @@
           </thead>
           @forelse ($students as $key => $value )
               <tr>
-                <td>{{++$key}}</td>
+                <td>{{ 10 * (request()->has('page') ? (request('page') - 1) : 0) + (++$key)}}</td>
                 <td>{{$value->first_name}}</td>
                 <td>{{$value->last_name}}</td>
                 <td>{{$value->email}}</td>
