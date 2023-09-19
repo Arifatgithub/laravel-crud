@@ -49,7 +49,7 @@
                         </div>
                     @elseif (session()->has('error_message'))
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong>Oops !</strong> {{ session()->get('error_message') }}
+                            <strong>Ok</strong> {{ session()->get('error_message') }}
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                     @endif
