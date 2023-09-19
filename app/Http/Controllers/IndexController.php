@@ -14,7 +14,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $students= Student::paginate(10);
+        $students= Student::paginate(request()->has('limit') ? request('limit') : 10);
         return view('students.index', compact('students'));
     }
 
@@ -39,7 +39,6 @@ class IndexController extends Controller
                 'address' => $request -> address,
                 'gender' => $request -> gender,
                 'department_id' => $request ->department_id
-
             ]);
             // $student = new Student();
             // $student->first_name = $request->first_name;
@@ -54,8 +53,6 @@ class IndexController extends Controller
             }
             session()->flash('error_message', 'Something went wrong, please try again');
             return redirect()->route('students.create');
-
-
         } catch (\Exception $th) {
             session()->flash('error_message',$th->getMessage());
             return redirect()->route('students.create');
